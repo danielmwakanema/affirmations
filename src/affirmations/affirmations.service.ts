@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { randomInteger } from 'src/common/utils/random';
-import { AffirmationsFileAdapter } from './affirmations-file.adapter';
+import { AffirmationsFileRepository } from './affirmations-file.repository';
 
 @Injectable()
 export class AffirmationsService {
-    constructor(private readonly src: AffirmationsFileAdapter) {}
+    constructor(private readonly src: AffirmationsFileRepository) {}
 
     async getAffirmation(): Promise<string> {
         const payload = await this.src.findAll();

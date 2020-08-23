@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import configuration from 'src/config/configuration';
-import { AffirmationsFileAdapter } from './affirmations-file.adapter';
+import { AffirmationsFileRepository } from './affirmations-file.repository';
 import { AffirmationsService } from './affirmations.service';
 
 @Module({
@@ -10,7 +10,7 @@ import { AffirmationsService } from './affirmations.service';
       load: [configuration]
     })
   ],
-  providers: [AffirmationsService, AffirmationsFileAdapter],
+  providers: [AffirmationsService, AffirmationsFileRepository],
   exports: [AffirmationsService]
 })
 export class AffirmationsModule {}
