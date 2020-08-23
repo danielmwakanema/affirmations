@@ -3,7 +3,7 @@ import VoiceResponse = require('twilio/lib/twiml/VoiceResponse');
 
 @Injectable()
 export class TwilioService {
-    private _defaultDelay: '300ms';
+    private _defaultDelay: '400ms';
 
     say(message: string): string {
         const response = new VoiceResponse();
