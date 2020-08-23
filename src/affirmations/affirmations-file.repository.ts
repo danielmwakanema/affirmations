@@ -1,11 +1,11 @@
 import { Injectable } from "@nestjs/common";
 import { ConfigService } from "@nestjs/config";
-import { AffirmationsAdapterInterface } from "src/common/interfaces/affirmations-adaper.interface";
+import { AffirmationsResositoryInterface } from "src/common/interfaces/affirmations-repository.interface";
 import { readFileAsync } from "src/common/utils/filesystem";
 import { affirmations } from './affirmations';
 
 @Injectable()
-export class AffirmationsFileAdapter implements AffirmationsAdapterInterface {
+export class AffirmationsFileRepository implements AffirmationsResositoryInterface {
     constructor(private readonly configService: ConfigService) {}
 
     async findAll(): Promise<string[]> {
